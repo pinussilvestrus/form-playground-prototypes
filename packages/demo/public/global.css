@@ -1,0 +1,230 @@
+html,
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  color: #333;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+a {
+  color: rgb(0, 100, 200);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: rgb(0, 80, 160);
+}
+
+label {
+  display: block;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-padding: 0.4em 0;
+  padding: 0.4em;
+  margin: 0 0 0.5em 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+
+input:disabled {
+  color: #ccc;
+}
+
+button {
+  color: #333;
+  background-color: #f4f4f4;
+  outline: none;
+}
+
+button:disabled {
+  color: #999;
+}
+
+button:not(:disabled):active {
+  background-color: #ddd;
+}
+
+button:focus {
+  border-color: #666;
+}
+
+#properties .group {
+  padding: 10px 15px;
+  position: relative;
+}
+
+#properties .group .group-header {
+  font-weight: bolder;
+  display: inline-block;
+  vertical-align: middle;
+  color: #666;
+  font-size: 18px;
+}
+
+#properties .group + .group {
+  border-top: 1px solid #eee;
+}
+
+#properties .group:last-child {
+  padding-bottom: 9px;
+}
+
+#properties .group .entry {
+  margin-bottom: 6px;
+}
+
+#properties .group .entry.entry-description {
+  margin-top: 5px;
+  color: #999;
+}
+
+#properties .action-button {
+  position: absolute;
+  height: 23px;
+  width: 24px;
+  padding: 0 0 2px;
+  overflow: hidden;
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+}
+
+#properties .action-button:before {
+  font-style: normal;
+  font-weight: normal;
+
+  display: inline-block;
+  text-decoration: inherit;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#properties .action-button.add {
+  right: 10px;
+  top: 27px;
+}
+
+#properties .action-button.add:before {
+  content: "+";
+}
+
+#properties .action-button.delete {
+  right: 0;
+  top: -21px;
+}
+
+#properties .action-button.delete:before {
+  content: "×";
+}
+
+.djs-palette.two-column.open {
+  width: 48px !important;
+}
+
+.bjs-container {
+  position: absolute !important;
+}
+
+#properties label {
+  font-weight: bold;
+  display: inline-block;
+  vertical-align: middle;
+  color: #666666;
+  margin: 3px 0;
+}
+
+#properties input, textarea {
+  padding: 4px 7px;
+  border: 1px solid #cccccc;
+  vertical-align: middle;
+  width: 100%;
+  margin-bottom: 7px !important;
+}
+
+.item {
+  padding: 10px;
+  padding-left: 5px;
+  border-radius: 2px;
+}
+
+.item .item-header .item-name {
+  margin: 0;
+  display: inline-block;
+  color: #666666;
+  font-weight: bold;
+}
+
+.item .item-header .item-name .chevron {
+  height: 12px;
+  width: 12px;
+  margin-right: 4px;
+  content: url('data:image/svg+xml,<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" class="svg-inline--fa fa-chevron-right fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg>');
+}
+
+.item .item-header .item-description {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.5);
+  float: right;
+  max-width: 150px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.item .item-details {
+  display: none;
+  padding-left: 1rem;
+  padding-top: 15px;
+}
+
+.item .item-details label {
+  font-weight: normal;
+}
+
+.item.active .item-details {
+  display: block;
+  position: relative;
+}
+
+.item.active .item-description {
+  display: none;
+}
+
+.item.active .chevron {
+  content: url('data:image/svg+xml,<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" class="svg-inline--fa fa-chevron-down fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg>') !important;
+}
+
+.variable-overlay {
+  white-space: nowrap;
+  padding: 7px;
+  color: white;
+  border-radius: 15px;
+}
+
+.variable-overlay.used {
+  background-color: #8FD14E;
+}
+
+.variable-overlay.created {
+  background-color: red;
+}
