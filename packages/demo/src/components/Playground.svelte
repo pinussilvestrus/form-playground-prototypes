@@ -25,11 +25,10 @@
       data,
       schema,
       actions: { display: false },
-      editor: { inlinePropertiesPanel: false },
-      preview: { inline: false }
+      editor: { inlinePropertiesPanel: false }
     });
 
-    playground.on('playground.rendered', () => {
+    playground.on('formPlayground.rendered', () => {
       playground.attachEditorContainer(editorContainer);
       playground.attachDataContainer(dataContainer);
       playground.attachPaletteContainer(paletteContainer);
