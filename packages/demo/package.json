@@ -6,16 +6,19 @@
     "build": "rollup -c --failAfterWarnings",
     "dev": "rollup -c -w --failAfterWarnings",
     "lint": "eslint --ext js,svelte .",
-    "bump-deps": "ncu -u && npm i"
+    "bump-deps": "ncu -u && npm i",
+    "link-deps": "node tasks/link-deps.js"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^22.0.1",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
+    "del": "^3.0.0",
     "eslint": "^8.20.0",
     "eslint-plugin-bpmn-io": "^0.14.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-svelte3": "^4.0.0",
+    "execa": "^1.0.0",
     "node-sass": "^7.0.1",
     "npm-check-updates": "^16.0.1",
     "rollup": "^2.77.2",
@@ -29,8 +32,8 @@
     "svelte-preprocess-sass": "^2.0.1"
   },
   "dependencies": {
-    "@bpmn-io/form-js": "https://gitpkg.now.sh/bpmn-io/form-js/packages/form-js?292-flexible-playground-components",
-    "@bpmn-io/form-js-playground": "https://gitpkg.now.sh/bpmn-io/form-js/packages/form-js-playground?292-flexible-playground-components",
+    "@bpmn-io/form-js": "^0.8.0-alpha.0",
+    "@bpmn-io/form-js-playground": "^0.8.0-alpha.0",
     "classnames": "^2.3.1",
     "min-dash": "^3.8.1",
     "sass": "^1.54.0"
